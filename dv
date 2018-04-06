@@ -1,0 +1,30 @@
+[33mcommit e468eed85c82f6bfdd89d51d57f9d87ea6834d4e[m
+Author: alexanderballesteros <aleh0315@hotmail.com>
+Date:   Thu Apr 5 19:52:58 2018 -0500
+
+    migration expenses
+
+[33mcommit fe6f3eaab9b9f93318453b9865a8301c4ba3bb4b[m
+Merge: 8c1d276 740ec40
+Author: alexanderballesteros <aleh0315@hotmail.com>
+Date:   Thu Apr 5 18:56:32 2018 -0500
+
+    Merge branch 'master' of github.com:alexanderballesteros/Mis_Gastos
+
+[33mcommit 8c1d27600b8baf1be295d3b4a33aa5489f524abe[m
+Author: alexanderballesteros <aleh0315@hotmail.com>
+Date:   Thu Apr 5 18:50:24 2018 -0500
+
+    mis_gastos rspect
+
+[33mcommit 740ec40d38e007a19afd123c88f58c9e2b274ef9[m
+Author: alexanderballesteros <aleh0315@hotmail.com>
+Date:   Thu Apr 5 00:35:31 2018 -0500
+
+    Mis_Gastos Rails with Devise
+
+[33mcommit cfb37b7b4f789b8299f2ba4d51dccce06b5b1c18[m
+Author: alexanderballesteros <aleh0315@hotmail.com>
+Date:   Wed Apr 4 23:03:37 2018 -0500
+
+    first commit
