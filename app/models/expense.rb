@@ -1,15 +1,28 @@
 class Expense < ApplicationRecord
   belongs_to :user
+  belongs_to :category
+  belongs_to :transaction_type
 
   validates :user_id, presence: true
+  validates :category, presence: true
+  validates :transaction_type, presence: true
   validates :amount, numericality: { greater_than: 0 }
   validates :concept, presence: true
-  validate :date_cant_be_nil
+  before_create :date_cant_be_nil
+
+  scope :daily_expenses, -> {where("date >= ?", DateTime.now.beginning_of_day)}
+  scope :last_six_months, -> {where("date >= ?", 6.months.ago)}
+  scope :this_month, -> {where("extract(month from date) = ?", Time.now.month)}
+  scope :group_category_this_month, -> {this_month.group_by { |expense| expense.category.name}}
+  scope :group_category_last_six_months, -> {last_six_months.group_by { |expense| expense.category.name}}
+  scope :group_category_last_six_months_per_day, -> {group_category_last_six_months.group_by { |expense| expense.category.name}}
+
 
   def date_cant_be_nil
     if self.date.nil?
       self.date = Time.now
     end
   end
+
 
 end
