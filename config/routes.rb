@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  root 'dashboard#index'
+  root 'expenses#index'
   resources :dashboard, only:[:index]
   resources :expenses, only:[:index]
 
