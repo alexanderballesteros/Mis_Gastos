@@ -1,0 +1,43 @@
+<h1>Expenses</h1>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-6">
+<% @transaction_type.each do |transaction_type| %>
+	<button  class="transaction-type" id=<%=transaction_type.name%>><%=transaction_type.name%></button>
+<% end%>	
+  </div>
+    <div class="col-sm-6">
+<% @categories.each do |categories| %>
+	<button  class="category" id=<%="categories"%>><%=categories.name%></button>
+<% end%>	
+  </div>
+        <br>
+  </div>
+	<div style:"background-color:blue">
+		<br>
+  <div id="expenses">
+   	<%= render partial: "expenses_list", locals: { cositas: @expenses} %>
+  
+</div>	  		
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    $(".transaction-type").on('click', function(e) {
+      var filter = this.id;
+      var param = {"transaction_type": filter };
+      e.preventDefault();
+      $.ajax({
+      	type: "GET",
+      	url: "/expenses.js",
+      	dataType: 'html',
+      	data: param,
+      	success: function(response) {
+      		$("#expenses").empty();
+      		$("#expenses").html(response);
+      	}
+      });
+    });
+  });
+</script>
+

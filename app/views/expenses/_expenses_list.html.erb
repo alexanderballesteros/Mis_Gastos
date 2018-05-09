@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+  	<th scope="col">Dia</th>
+   	<th scope="col">Concepto</th>
+    <th scope="col">Categoría</th>    	
+   	<th scope="col">Valor</th>	
+	<th scope="col">Tipo de Transacción</th>	
+    </tr>
+  </thead>
+  
+<% cositas.each do |expense| %>
+    <tbody>
+	<tr>
+	<div class="row">
+		<td scope="row"><%= expense.date.strftime("%d %a") %></td>
+		<td scope="row"><%= expense.concept %></td>
+		<td scope="row"><%= expense.category.name %></td>
+		<td scope="row"><%= expense.amount %></td>
+		<td scope="row"><%= expense.transaction_type.name %></td>
+	</div>
+    </tr>
+    </tbody>
+<%end %>
+ </table>
