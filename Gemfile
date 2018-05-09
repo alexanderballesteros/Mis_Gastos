@@ -37,8 +37,8 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'sprockets'
 gem 'jquery-rails'
 
-#  gem 'faker'
-#  gem 'faker'
+gem 'faker'
+
 #Installing mailer 
 gem "letter_opener", group: :development
 group :development, :test do
@@ -60,6 +60,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.7'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
